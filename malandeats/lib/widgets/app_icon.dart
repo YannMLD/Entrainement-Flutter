@@ -7,10 +7,12 @@ class AppIcon extends StatelessWidget {
   final Color iconColor;
   final Color backgroundColor;
   final double size;
+  final double iconSize;
 
   const AppIcon(
       {Key? key,
       required this.icon,
+      this.iconSize = 16,
       this.iconColor = AppColors.black,
       this.backgroundColor = Colors.white60,
       this.size = 42})
@@ -31,7 +33,8 @@ class AppIcon extends StatelessWidget {
         ),
          HeroIcon(
             icon,
-            size: 16,
+            size: iconSize,
+            color: iconColor,
           )
       ],
     );

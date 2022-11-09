@@ -6,14 +6,14 @@ class SmallText extends StatelessWidget {
   Color? color;
   final String text;
   double size;
-  double height;
+  double lineHeight;
 
   SmallText({
     Key? key,
     this.color = const Color(0xFF6F6F74),
     required this.text,
     this.size = 0,
-    this.height = 1.2
+    this.lineHeight = 1.2
   }) : super(key: key);
 
   @override
@@ -21,7 +21,7 @@ class SmallText extends StatelessWidget {
     return Text(
       text,
       style: GoogleFonts.rubik(
-          color: color, fontSize: size==0?Dimensions.xsmallFont:size, height: height),
+          color: color, fontSize: size==0?Dimensions.xsmallFont:size, height: lineHeight),
     );
   }
 }

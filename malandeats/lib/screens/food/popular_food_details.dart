@@ -5,6 +5,7 @@ import 'package:malandeats/utils/dimensions.dart';
 import 'package:malandeats/widgets/app_column.dart';
 import 'package:malandeats/widgets/app_icon.dart';
 import 'package:malandeats/widgets/big_text.dart';
+import 'package:malandeats/widgets/expendable_text.dart';
 
 class PopularFoodDetails extends StatelessWidget {
   const PopularFoodDetails({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class PopularFoodDetails extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          // Background image
           Positioned(
               left: 0,
               right: 0,
@@ -27,6 +29,7 @@ class PopularFoodDetails extends StatelessWidget {
                           'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1081&q=80')),
                 ),
               )),
+          // Icons en haut
           Positioned(
               top: Dimensions.heightLarge,
               left: Dimensions.widthMedium,
@@ -38,6 +41,7 @@ class PopularFoodDetails extends StatelessWidget {
                   AppIcon(icon: HeroIcons.shoppingBag)
                 ],
               )),
+          // Introduction du plat
           Positioned(
               left: 0,
               right: 0,
@@ -59,8 +63,10 @@ class PopularFoodDetails extends StatelessWidget {
                       const AppColumn(text: "Blanquette de veau"),
                       SizedBox(height: Dimensions.heightMedium),
                       BigText(text: 'Présentation'),
+                      const Expanded(child: SingleChildScrollView(child: ExpendableTextWidget(text: "La blanquette, ou blanquette de veau ou blanquette de veau à l'ancienne, est une recette de cuisine traditionnelle de cuisine française, à base de viande de veau cuite dans un bouillon avec carotte, poireau, oignon et bouquet garni, liée en sauce blanche à la crème et au beurre et aux champignons de Paris. La blanquette, ou blanquette de veau ou blanquette de veau à l'ancienne, est une recette de cuisine traditionnelle de cuisine française, à base de viande de veau cuite dans un bouillon avec carotte, poireau, oignon et bouquet garni, liée en sauce blanche à la crème et au beurre et aux champignons de Paris. La blanquette, ou blanquette de veau ou blanquette de veau à l'ancienne, est une recette de cuisine traditionnelle de cuisine française, à base de viande de veau cuite dans un bouillon avec carotte, poireau, oignon et bouquet garni, liée en sauce blanche à la crème et au beurre et aux champignons de Paris. La blanquette, ou blanquette de veau ou blanquette de veau à l'ancienne, est une recette de cuisine traditionnelle de cuisine française, à base de viande de veau cuite dans un bouillon avec carotte, poireau, oignon et bouquet garni, liée en sauce blanche à la crème et au beurre et aux champignons de Paris.")))
                     ],
                   )))
+          
         ],
       ),
       bottomNavigationBar: Container(
