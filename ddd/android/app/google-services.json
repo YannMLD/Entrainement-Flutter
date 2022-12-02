@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "660430162511",
+    "project_id": "tutoriel-flutter-ddd",
+    "storage_bucket": "tutoriel-flutter-ddd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660430162511:android:818b4808532b587fcb783a",
+        "android_client_info": {
+          "package_name": "com.example.ddd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660430162511-fktccp464iv83ltjdndqpmo42h6roue6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKz_xEUQSkEPUFdwlyCUpW4cSu3CqzuiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660430162511-fktccp464iv83ltjdndqpmo42h6roue6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

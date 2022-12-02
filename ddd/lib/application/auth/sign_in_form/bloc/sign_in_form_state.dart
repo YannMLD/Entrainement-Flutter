@@ -5,8 +5,8 @@ class SignInFormState with _$SignInFormState {
   const factory SignInFormState({
     required EmailAddress emailAddress,
     required Password password,
-    required isSubmiting,
-    required showErrorMessages,
+    required bool isSubmiting,
+    required bool showErrorMessages,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption //Option<None, Some> (aka None = null, Some = quelque chose)
   }) = _SignInFormState;
 
