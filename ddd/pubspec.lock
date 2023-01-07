@@ -265,13 +265,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "8.1.1"
-  flutter_lints:
-    dependency: "direct dev"
-    description:
-      name: flutter_lints
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -419,13 +412,6 @@ packages:
     dependency: "direct dev"
     description:
       name: lint
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.1"
-  lints:
-    dependency: transitive
-    description:
-      name: lints
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
