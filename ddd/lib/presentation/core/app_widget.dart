@@ -8,9 +8,13 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+        debugShowCheckedModeBanner: false,
+        title: 'Notes',
+        theme: ThemeData.light().copyWith(
+          primaryColor: Colors.green[800],
+          inputDecorationTheme: InputDecorationTheme(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+          ),
         ),
         home: const SignInPage());
   }
