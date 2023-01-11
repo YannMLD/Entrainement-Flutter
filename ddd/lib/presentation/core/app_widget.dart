@@ -1,21 +1,37 @@
+import 'package:ddd/application/auth/auth_bloc.dart';
+import 'package:ddd/injection.dart';
+import 'package:ddd/presentation/routes/app_router.gr.dart';
 import 'package:ddd/presentation/sign_in/sign_in_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({super.key});
+  AppWidget({super.key});
+
+  final _appRouter = AppRouter();
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Notes',
-        theme: ThemeData.light().copyWith(
-          primaryColor: Colors.green[800],
-          inputDecorationTheme: InputDecorationTheme(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) =>
+                getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
+          )
+        ],
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: 'Notes',
+          theme: ThemeData.light().copyWith(
+            primaryColor: Colors.green[800],
+            inputDecorationTheme: InputDecorationTheme(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+            ),
           ),
-        ),
-        home: const SignInPage());
+          routerDelegate: _appRouter.delegate(),
+          routeInformationParser: _appRouter.defaultRouteParser(),
+        ));
   }
 }
