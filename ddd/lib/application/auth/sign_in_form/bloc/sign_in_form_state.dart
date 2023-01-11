@@ -7,15 +7,15 @@ class SignInFormState with _$SignInFormState {
     required Password password,
     required bool isSubmiting,
     required bool showErrorMessages,
-    required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption //Option<None, Some> (aka None = null, Some = quelque chose)
+    required Option<Either<AuthFailure, Unit>>
+        authFailureOrSuccessOption, //Option<None, Some> (aka None = null, Some = quelque chose)
   }) = _SignInFormState;
 
   factory SignInFormState.initial() => SignInFormState(
-    emailAddress: EmailAddress(''),
-    password: Password(''),
-    showErrorMessages: false,
-    isSubmiting: false,
-    authFailureOrSuccessOption: none(),
-
-  );
+        emailAddress: EmailAddress(''),
+        password: Password(''),
+        showErrorMessages: false,
+        isSubmiting: false,
+        authFailureOrSuccessOption: none(),
+      );
 }

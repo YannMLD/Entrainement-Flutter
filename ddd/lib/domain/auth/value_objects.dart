@@ -1,8 +1,7 @@
-
+import 'package:dartz/dartz.dart';
 import 'package:ddd/domain/core/failures.dart';
 import 'package:ddd/domain/core/value_objects.dart';
 import 'package:ddd/domain/core/value_validators.dart';
-import 'package:dartz/dartz.dart';
 
 class EmailAddress extends ValueObjects<String> {
   @override
@@ -15,7 +14,6 @@ class EmailAddress extends ValueObjects<String> {
   const EmailAddress._(
     this.value,
   );
-
 }
 
 class Password extends ValueObjects<String> {
@@ -29,5 +27,4 @@ class Password extends ValueObjects<String> {
   const Password._(
     this.value,
   );
-
 }

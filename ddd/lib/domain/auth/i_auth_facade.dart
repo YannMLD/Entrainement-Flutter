@@ -1,7 +1,7 @@
+import 'package:dartz/dartz.dart';
 import 'package:ddd/domain/auth/auth_failure.dart';
 import 'package:ddd/domain/auth/user.dart';
 import 'package:ddd/domain/auth/value_objects.dart';
-import 'package:dartz/dartz.dart';
 
 abstract class IAuthFacade {
   Option<User> getSignedInUser();

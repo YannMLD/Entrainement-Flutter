@@ -1,11 +1,9 @@
-import 'dart:developer';
-
 import 'package:ddd/application/auth/sign_in_form/bloc/sign_in_form_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignInForm extends StatelessWidget {
-  const SignInForm({Key? key}) : super(key: key);
+  const SignInForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class SignInForm extends StatelessWidget {
           (either) => either.fold(
             (failure) {
               // Flushbar()
-              var snackBar = SnackBar(
+              final snackBar = SnackBar(
                 content: Text(
                   failure.map(
                     cancelledByUser: (_) => 'Connexion annulée',
@@ -128,7 +126,11 @@ class SignInForm extends StatelessWidget {
                         .add(const SignInFormEvent.signInWithGooglePressed());
                   },
                   child: const Text("Se connecter avec Google"),
-                )
+                ),
+                if (state.isSubmiting) ...[
+                  const SizedBox(height: 8),
+                  const LinearProgressIndicator()
+                ]
               ],
             ),
           ),
