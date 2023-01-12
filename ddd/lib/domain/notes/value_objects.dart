@@ -6,7 +6,7 @@ import 'package:ddd/domain/core/value_validators.dart';
 import 'package:flutter/material.dart';
 import 'package:kt_dart/kt.dart';
 
-class NoteBody extends ValueObjects {
+class NoteBody extends ValueObjects<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
@@ -22,7 +22,7 @@ class NoteBody extends ValueObjects {
   const NoteBody._(this.value);
 }
 
-class TodoName extends ValueObjects {
+class TodoName extends ValueObjects<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
@@ -40,7 +40,7 @@ class TodoName extends ValueObjects {
   const TodoName._(this.value);
 }
 
-class NoteColor extends ValueObjects {
+class NoteColor extends ValueObjects<Color> {
   static const List<Color> predefinedColors = [
     Color(0xFFF0C808),
     Color(0xFF06AED5),
