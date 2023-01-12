@@ -28,9 +28,7 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
 
 // Vérifie qu'une string ne dépasse pas une taille maximum passée en paramètre
 Either<ValueFailure<String>, String> validateMaxStringLength(
-  String input,
-  int maxLength,
-) {
+    String input, int maxLength) {
   if (input.length > maxLength) {
     return right(input);
   } else {
@@ -70,8 +68,8 @@ Either<ValueFailure<String>, String> validateSingleLine(
 }
 
 // Vérifie qu'une string est bien sur une seule ligne
-Either<ValueFailure<KtList>, KtList> validateMaxListLength(
-  KtList input,
+Either<ValueFailure<KtList<T>>, KtList<T>> validateMaxListLength<T>(
+  KtList<T> input,
   int max,
 ) {
   if (input.size <= max) {

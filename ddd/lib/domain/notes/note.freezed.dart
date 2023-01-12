@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Note {
   UniqueId get id => throw _privateConstructorUsedError;
   NoteBody get body => throw _privateConstructorUsedError;
-  Color get color => throw _privateConstructorUsedError;
+  NoteColor get color => throw _privateConstructorUsedError;
   List3<TodoItem> get todos => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +30,8 @@ abstract class $NoteCopyWith<$Res> {
   factory $NoteCopyWith(Note value, $Res Function(Note) then) =
       _$NoteCopyWithImpl<$Res, Note>;
   @useResult
-  $Res call({UniqueId id, NoteBody body, Color color, List3<TodoItem> todos});
+  $Res call(
+      {UniqueId id, NoteBody body, NoteColor color, List3<TodoItem> todos});
 }
 
 /// @nodoc
@@ -63,7 +64,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as NoteColor,
       todos: null == todos
           ? _value.todos
           : todos // ignore: cast_nullable_to_non_nullable
@@ -78,7 +79,8 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
       __$$_NoteCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UniqueId id, NoteBody body, Color color, List3<TodoItem> todos});
+  $Res call(
+      {UniqueId id, NoteBody body, NoteColor color, List3<TodoItem> todos});
 }
 
 /// @nodoc
@@ -107,7 +109,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
       null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as NoteColor,
       null == todos
           ? _value.todos
           : todos // ignore: cast_nullable_to_non_nullable
@@ -118,15 +120,15 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
 
 /// @nodoc
 
-class _$_Note implements _Note {
-  const _$_Note(this.id, this.body, this.color, this.todos);
+class _$_Note extends _Note {
+  const _$_Note(this.id, this.body, this.color, this.todos) : super._();
 
   @override
   final UniqueId id;
   @override
   final NoteBody body;
   @override
-  final Color color;
+  final NoteColor color;
   @override
   final List3<TodoItem> todos;
 
@@ -156,16 +158,17 @@ class _$_Note implements _Note {
       __$$_NoteCopyWithImpl<_$_Note>(this, _$identity);
 }
 
-abstract class _Note implements Note {
-  const factory _Note(final UniqueId id, final NoteBody body, final Color color,
-      final List3<TodoItem> todos) = _$_Note;
+abstract class _Note extends Note {
+  const factory _Note(final UniqueId id, final NoteBody body,
+      final NoteColor color, final List3<TodoItem> todos) = _$_Note;
+  const _Note._() : super._();
 
   @override
   UniqueId get id;
   @override
   NoteBody get body;
   @override
-  Color get color;
+  NoteColor get color;
   @override
   List3<TodoItem> get todos;
   @override

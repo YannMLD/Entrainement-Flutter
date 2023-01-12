@@ -64,13 +64,13 @@ class NoteColor extends ValueObjects {
   const NoteColor._(this.value);
 }
 
-class List3<T> extends ValueObjects<KtList> {
+class List3<T> extends ValueObjects<KtList<T>> {
   @override
-  final Either<ValueFailure<KtList>, KtList> value;
+  final Either<ValueFailure<KtList<T>>, KtList<T>> value;
 
   static const maxLength = 3;
 
-  factory List3(KtList input) {
+  factory List3(KtList<T> input) {
     assert(input != null);
     return List3._(validateMaxListLength(input, maxLength));
   }
